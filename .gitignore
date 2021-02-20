@@ -1,6 +1,7 @@
 /StarterFramework/bin
 /StarterFramework/.gradle
 /StarterFramework/build
+/StarterFramework/gensrc
 StarterFramework/.classpath
 StarterFramework/.project
 StarterFramework/.settings
@@ -9,6 +10,7 @@ StarterFramework/HELP.md
 /component-foodsanddishes/bin
 /component-foodsanddishes/.gradle
 /component-foodsanddishes/build
+/component-foodsanddishes/gensrc
 component-foodsanddishes/.classpath
 component-foodsanddishes/.project
 component-foodsanddishes/.settings
