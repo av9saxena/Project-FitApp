@@ -75,7 +75,7 @@ public class FoodsServiceImpl implements FoodsService {
 		if (existingFood != null) {
 
 			Map<String, Object> existingFoodMap = fndUtil.convertPayload(existingFood, Map.class);
-			errorCodes = newFoodValidator.validate(payload.getPayloadMap(), existingFoodMap);
+			errorCodes = existingFoodValidator.validate(payload.getPayloadMap(), existingFoodMap);
 			food = fndUtil.convertPayload(existingFoodMap, Food.class);
 
 		} else {
