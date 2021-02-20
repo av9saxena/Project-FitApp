@@ -1,0 +1,10 @@
+server:
+  port: 8085
+  
+spring:  datasource:    platform: mysql
+    url: jdbc:mysql://localhost:3306/foodsanddishes
+    username: root
+    password: mysql
+  jpa:    hibernate:
+      ddl-auto: update      naming:        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl  
+  application:    name: com-avios-cp-foodsanddishes

@@ -1,0 +1,50 @@
+plugins {
+	id 'java'
+}
+
+apply plugin: 'maven'
+
+group = 'com.avios.cp'
+version = '1.0.0'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenLocal()
+	mavenCentral()
+}
+
+dependencies {
+	compile 'com.avios.cp:StarterFramework:1.0.0'
+}
+
+test {
+	useJUnitPlatform()
+}
+
+clean {
+	delete 'gensrc'
+}
+
+configurations {
+	querydsl.extendsFrom compile
+}
+
+task generateQueryDSL(type: JavaCompile, group: 'build', description: 'Generates query types for entities') {
+
+	sourceSets.main.java.srcDirs += ['gensrc/main/java']
+	source = sourceSets.main.java
+	classpath = configurations.compile
+	options.annotationProcessorPath = configurations.querydsl
+	options.compilerArgs = [
+			"-proc:only",
+			"-processor",
+			"com.querydsl.apt.jpa.JPAAnnotationProcessor"
+	]
+	destinationDir = file('gensrc/main/java')
+}
+
+build {
+	dependsOn generateQueryDSL
+	dependsOn compileJava
+	tasks.findByName('compileJava').mustRunAfter 'generateQueryDSL'
+}

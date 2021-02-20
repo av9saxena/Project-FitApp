@@ -1,0 +1,15 @@
+/StarterFramework/bin
+/StarterFramework/.gradle
+/StarterFramework/build
+StarterFramework/.classpath
+StarterFramework/.project
+StarterFramework/.settings
+StarterFramework/HELP.md
+
+/component-foodsanddishes/bin
+/component-foodsanddishes/.gradle
+/component-foodsanddishes/build
+component-foodsanddishes/.classpath
+component-foodsanddishes/.project
+component-foodsanddishes/.settings
+component-foodsanddishes/HELP.md
