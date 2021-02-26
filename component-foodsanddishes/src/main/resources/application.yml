@@ -8,3 +8,11 @@ spring:  datasource:    platform: mysql
   jpa:    hibernate:
       ddl-auto: update      naming:        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl  
   application:    name: com-avios-cp-foodsanddishes
+
+# Logging configuration
+logging:
+  level:
+    com.avios.cp: ERROR
+    com.springframework.security: WARN
+    org.apache.http: WARN
+    com.netflix: ERROR
